@@ -4,11 +4,11 @@ VALUES ('komputer',60,225.4),
        ('tablet',78,200);
 
 SELECT sum(quantity) as total_quantity,
-       avg(price) as total_price
+       avg(price) as total_price,product
 FROM sales
 GROUP BY product;
 
-SELECT sum(price),avg(quantity),min(price),max(quantity),count(product)
+SELECT sum(price),avg(quantity),min(price),max(quantity),count(product),product
 FROM sales
 group by id;
 
@@ -25,7 +25,7 @@ VALUES ('apple',225.4),
        ('lenovo',200);
 
 SELECT sum(amount) as total_amount,
-       avg(amount) as total_amount
+       avg(amount) as total_amount,category
 FROM Expenses
 GROUP BY category;
 
@@ -41,7 +41,7 @@ VALUES ('apple',225.4),
        ('lenovo',200);
 
 
-SELECT max(price),min(price)
+SELECT max(price),min(price),name
 FROM Products
 GROUP BY name;
 
