@@ -131,21 +131,21 @@ WHERE title LIKE '%of%'
 --  Query for searching currently available books.
 SELECT *
 FROM Book
-         LEFT JOIN Loan
-                   ON Book.id = Loan.bookId AND Loan.returnDate IS NULL
+LEFT JOIN Loan
+ON Book.id = Loan.bookId AND Loan.returnDate IS NULL
 WHERE Loan.bookId IS NULL;
 
 --  Query for searching popular books among readers.
 SELECT b.*, COUNT(l.id) AS loan_count
 FROM Book b
-         JOIN Loan l ON b.id = l.bookId
+JOIN Loan l ON b.id = l.bookId
 GROUP BY b.id
 ORDER BY loan_count DESC;
 
 --  Query for searching books read by a specific reader.
 SELECT b.*
 FROM Book b
-         JOIN Loan l ON b.id = l.bookId
+JOIN Loan l ON b.id = l.bookId
 WHERE l.readerId = 1;
 
 --  Query for searching books written by a specific author.
