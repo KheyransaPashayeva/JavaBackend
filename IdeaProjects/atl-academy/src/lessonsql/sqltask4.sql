@@ -71,7 +71,7 @@ FROM Products;
 -- • Get a list of all categories of products.
 SELECT p.* ,Categories.name
 FROM Categories
-         JOIN Products P on Categories.id = P.category_id;
+JOIN Products P on Categories.id = P.category_id;
 
 -- • Get a list of all customers.
 SELECT *
@@ -80,9 +80,11 @@ FROM Customers;
 -- • Get a list of all orders.
 SELECT *
 FROM Orders;
+
 -- • Get a list of all order details.
 SELECT *
 FROM OrderDetails;
+
 -- • Get information about a specific product by its ID.
 SELECT p.*
 FROM Products p
@@ -91,23 +93,26 @@ WHERE p.id=1;
 -- • Get a list of products in a specific category.
 SELECT p.*
 FROM Products p
-         JOIN Categories C on C.id = p.category_id
+JOIN Categories C on C.id = p.category_id
 WHERE C.id=1;
 
 -- • Get information about a customer by their ID.
 SELECT c.*
 FROM Customers c
 WHERE c.id=1;
+
 -- • Get a list of orders for a specific customer.
 SELECT o.*
 FROM Orders o
-         JOIN Customers C on C.id = o.customer_id
+JOIN Customers C on C.id = o.customer_id
 WHERE C.id=1;
+
 -- • Get a list of order details for a specific order.
 SELECT od.*
 FROM OrderDetails od
-         JOIN Orders O on O.id = od.order_id
+JOIN Orders O on O.id = od.order_id
 WHERE O.id=2;
+
 -- • Update the price of a product by its ID.
 UPDATE Products
 SET price=10.99
