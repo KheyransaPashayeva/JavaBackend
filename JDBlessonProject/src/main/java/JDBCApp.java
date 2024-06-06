@@ -21,6 +21,7 @@ public class JDBCApp {
 
     public static final String DELETE="DELETE FROM Users\n" +
             "WHERE name=?;";
+    public static final String UPDATE="UPDATE  Users SET NAME='Xeyransa' where id=1";
     public static void main(String[] args) {
         CreateTable();
 //        InsertUsers();
@@ -84,5 +85,14 @@ public class JDBCApp {
             throw new RuntimeException(e);
         }
     }
+    private static void UpdateUser(){
+        try(final Connection conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+                "postgres","mysecretpassword");) {
+            PreparedStatement preparedStatement=conn.prepareStatement(UPDATE);
+            preparedStatement.execute();
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
