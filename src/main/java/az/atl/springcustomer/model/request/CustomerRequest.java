@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CustomerRequest {
         String name;
-        String lastname;
+        String lastName;
         String email;
         String country;
 

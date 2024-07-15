@@ -19,7 +19,7 @@ public class CustomerEntity {
     @Column(name="name",nullable = false)
     private String name;
     @Column(name="last_name",nullable = false)
-    private String lastname;
+    private String lastName;
     @Column(name="email",nullable = false)
     private String email;
     @Column(name="country",nullable = false)

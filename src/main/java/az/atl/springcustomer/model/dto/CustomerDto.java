@@ -15,7 +15,7 @@ public class CustomerDto {
     @NotBlank
     private String name;
     @NotBlank
-    private String lastname;
+    private String lastName;
     @Email
     private String email;
     @NotNull
