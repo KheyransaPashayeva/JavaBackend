@@ -1,5 +1,6 @@
 package az.atl.springcustomer.service;
 
+import az.atl.springcustomer.dao.entity.CustomerEntity;
 import az.atl.springcustomer.model.dto.CustomerDto;
 import az.atl.springcustomer.model.request.CustomerRequest;
 
@@ -11,5 +12,6 @@ public interface CustomerService {
     List<CustomerDto> findAll();
     void update(Long id,CustomerDto customerDto);
     void delete(Long id);
+    void birthDayIds();
 
 }

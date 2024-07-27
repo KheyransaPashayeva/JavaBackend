@@ -28,6 +28,7 @@ public class CustomerController {
 
     @GetMapping("/all")
     public ResponseEntity<List<CustomerDto>> getAll(){
+
         return ResponseEntity.ok(customerService.findAll());
     }
     @PostMapping()
@@ -35,9 +36,10 @@ public class CustomerController {
         return ResponseEntity.status(HttpStatus.OK).body(customerService.create(customerRequest));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Void> update( @Valid @PathVariable Long id,@RequestBody CustomerDto customerDto){
+    public ResponseEntity<Void> update(@PathVariable Long id,@Valid @RequestBody CustomerDto customerDto){
         customerService.update(id,customerDto);
        return ResponseEntity.ok().build();
+        
 
     }
     @DeleteMapping("/{id}")
@@ -45,4 +47,5 @@ public class CustomerController {
         customerService.delete(id);
         return ResponseEntity.ok().build();
     }
+
 }
