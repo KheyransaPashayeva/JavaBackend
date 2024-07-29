@@ -22,6 +22,9 @@ public interface CustomerRepository extends JpaRepository<CustomerEntity,Long> {
     @Query("SELECT c FROM CustomerEntity c JOIN FETCH c.orders")
     List<CustomerEntity>findAllCustom();
 
-    @Query(nativeQuery = true, value = "select * from customers c where (extract(day from c.birthday) =  extract(day from CURRENT_DATE))")
+    @Query(nativeQuery = true,
+            value = "select * from customers c where " +
+                    "(extract(day from c.birthday) =  extract(day from CURRENT_DATE) and " +
+                    "extract(month from c.birthday) = extract(month from CURRENT_DATE)) ")
     List<CustomerEntity> findByBirthDay();
 }

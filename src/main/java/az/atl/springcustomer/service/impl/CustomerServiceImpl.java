@@ -58,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
                 .ifPresent(studentEntity ->  customerRepository.deleteById(id));
     }
     @Override
-    @Scheduled(cron = "0/10 * * * * *")
+    @Scheduled(cron = "00 00 * * * *")
     public void birthDayIds(){
         List<CustomerEntity> ids = customerRepository.findByBirthDay();
         System.out.println(ids.stream().
