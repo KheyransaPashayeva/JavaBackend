@@ -23,5 +23,5 @@ public class CustomerDto {
     private String email;
     @NotNull
     private String country;
-    List<OrderEntity> orders;
+   private List<OrderEntity> orders;
 }
