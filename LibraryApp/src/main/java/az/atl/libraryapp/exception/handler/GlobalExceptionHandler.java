@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.LocalDateTime;
 @RestControllerAdvice
-public class QlobalExceptionHandler {
+public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(AuthorNotFoundException.class)
     public ResponseEntity<ErrorDto> handleCustomerNotFound(AuthorNotFoundException ex){
