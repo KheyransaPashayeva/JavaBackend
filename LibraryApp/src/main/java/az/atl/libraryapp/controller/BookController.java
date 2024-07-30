@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @AllArgsConstructor
-@Controller
+@RestController
 @RequestMapping("/api/v1/books")
 public class BookController {
 
     private  final BookServiceImpl bookService;
+
 
     @GetMapping("/{id}")
     public ResponseEntity<BookDto> getById(@PathVariable Long id){

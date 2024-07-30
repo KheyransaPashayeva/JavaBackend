@@ -16,7 +16,7 @@ import java.util.List;
 
 @Validated
 @AllArgsConstructor
-@Controller
+@RestController
 @RequestMapping("api/v1/author")
 public class AuthorController {
     private final AuthorServiceImpl authorService;
